@@ -1,6 +1,6 @@
 package zad_5;
 
-public abstract class Shop {
+public class Shop {
     private TaxCalculator taxCalculator;
 
     public Shop(TaxCalculator taxCalculator) {
