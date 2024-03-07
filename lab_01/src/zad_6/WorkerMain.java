@@ -31,15 +31,9 @@ public class WorkerMain {
 
         for (Worker worker : workers) {
             System.out.println(worker.getProfession());
-            worker
-                    .getWorkBehavior()
-                    .work();
-            worker
-                    .getDriveBehavior()
-                    .drive();
-            worker
-                    .getSpendingFreeTimeBehavior()
-                    .spendFreeTime();
+            worker.work();
+            worker.drive();
+            worker.spendFreeTime();
 
             System.out.println();
         }

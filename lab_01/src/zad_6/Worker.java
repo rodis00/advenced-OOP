@@ -30,19 +30,21 @@ public class Worker {
         this.spendingFreeTimeBehavior = spendingFreeTimeBehavior;
     }
 
-    public WorkBehavior getWorkBehavior() {
-        return workBehavior;
+    public void work() {
+        workBehavior.work();
     }
 
-    public DriveBehavior getDriveBehavior() {
-        return driveBehavior;
+    public void drive() {
+        driveBehavior.drive();
     }
 
-    public SpendingFreeTimeBehavior getSpendingFreeTimeBehavior() {
-        return spendingFreeTimeBehavior;
+    public void spendFreeTime() {
+        spendingFreeTimeBehavior.spendFreeTime();
     }
 
     public String getProfession() {
         return profession;
     }
+
+
 }
