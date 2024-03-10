@@ -2,6 +2,7 @@ package zad_2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class AdvertisementMain {
     public static void main(String[] args) {
@@ -22,8 +23,12 @@ public class AdvertisementMain {
         messages.add(new Message("First message"));
         messages.add(new Message("Second message"));
 
-        User user = users.get(1);
-        Message message = messages.get(1);
+        Random random = new Random();
+        int userId = random.nextInt(users.size());
+        int messageId = random.nextInt(messages.size());
+
+        User user = users.get(userId);
+        Message message = messages.get(messageId);
 
         Advertisement advertisement = new Advertisement(
                 user.getPrice(),
