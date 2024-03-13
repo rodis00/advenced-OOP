@@ -37,5 +37,11 @@ public class AdvertisementMain {
                 user.getName());
 
         advertisement.sendMessage();
+
+        System.out.println("\n");
+
+        advertisement.selectMessageType(40);
+        advertisement.selectLanguage("PL");
+        advertisement.sendMessage();
     }
 }

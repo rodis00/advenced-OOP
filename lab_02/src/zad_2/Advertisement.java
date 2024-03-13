@@ -18,14 +18,14 @@ public class Advertisement {
         this.recipient = recipient;
     }
 
-    private void selectLanguage(String language) {
+    public void selectLanguage(String language) {
         if (language.equals("PL"))
             this.language = new PolishLanguage();
         if (language.equals("AL"))
             this.language = new AlbaniaLanguage();
     }
 
-    private void selectMessageType(int price) {
+    public void selectMessageType(int price) {
         if (price == 30)
             this.messageType = new EmailMessage();
         if (price == 40)
