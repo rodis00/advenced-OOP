@@ -1,7 +1,8 @@
 package zad_1;
 
-public class Knight extends Character{
-    public Knight(IWeapon weapon) {
-        super(weapon);
+public class Knight implements IWeapon{
+    @Override
+    public void attack() {
+        System.out.println("sword");
     }
 }

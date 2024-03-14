@@ -1,6 +1,6 @@
 package zad_1;
 
-public abstract class Character {
+public class Character {
     private IWeapon weapon;
 
     public Character(IWeapon weapon) {
@@ -11,7 +11,7 @@ public abstract class Character {
         this.weapon = weapon;
     }
 
-    public void selectWeapon(String weapon) {
-        System.out.println(this.weapon.selectWeapon(weapon));
+    public void attack() {
+        weapon.attack();
     }
 }

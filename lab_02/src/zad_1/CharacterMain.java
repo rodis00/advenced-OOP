@@ -3,16 +3,16 @@ package zad_1;
 public class CharacterMain {
     public static void main(String[] args) {
 
-        Archer archer = new Archer(new Weapon());
-        archer.selectWeapon("Bow");
+        Character character = new Character(new Knight());
+        character.attack();
 
-        Cannoneer cannoneer = new Cannoneer(new Weapon());
-        cannoneer.selectWeapon("Cannon");
+        character.setWeapon(new Cannoneer());
+        character.attack();
 
-        Knight knight = new Knight(new Weapon());
-        knight.selectWeapon("Sword");
+        character.setWeapon(new Shooter());
+        character.attack();
 
-        Shooter shooter = new Shooter(new Weapon());
-        shooter.selectWeapon("Rifle");
+        character.setWeapon(new Archer());
+        character.attack();
     }
 }
