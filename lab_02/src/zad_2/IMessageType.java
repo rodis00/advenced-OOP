@@ -1,5 +1,5 @@
 package zad_2;
 
 public interface IMessageType {
-    String messageType();
+    void send(String advertisement, String recipient);
 }

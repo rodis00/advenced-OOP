@@ -1,11 +1,11 @@
 package zad_2;
 
-public class User {
+public class Recipient {
     private String name;
     private String language;
     private int price;
 
-    public User(
+    public Recipient(
             String name,
             String language,
             int price

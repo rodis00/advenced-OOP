@@ -1,47 +1,43 @@
 package zad_2;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class AdvertisementMain {
     public static void main(String[] args) {
 
-        List<User> users = new ArrayList<>();
-        users.add(new User(
-                "Maria",
-                "PL",
-                30)
-        );
-        users.add(new User(
-                "John",
-                "AL",
-                50)
+        List<Recipient> recipients = List.of(
+                new Recipient("Maria", "PL", 30),
+                new Recipient("John", "AL", 50),
+                new Recipient("Jimmy", "EN", 10)
         );
 
-        List<Message> messages = new ArrayList<>();
-        messages.add(new Message("First message"));
-        messages.add(new Message("Second message"));
+        List<Advertisement> advertisements = List.of(
+                new Advertisement("First advertisement."),
+                new Advertisement("Second advertisement."),
+                new Advertisement("Third advertisement.")
+        );
 
         Random random = new Random();
-        int userId = random.nextInt(users.size());
-        int messageId = random.nextInt(messages.size());
+        Recipient recipient = recipients.get(random.nextInt(recipients.size()));
+        Advertisement advertisement = advertisements.get(random.nextInt(advertisements.size()));
 
-        User user = users.get(userId);
-        Message message = messages.get(messageId);
+        AdvertisementSender advertisementSender = new AdvertisementSender(
+                new Translator(),
+                new EmailMessage()
+        );
 
-        Advertisement advertisement = new Advertisement(
-                user.getPrice(),
-                user.getLanguage(),
-                message.getMessage(),
-                user.getName());
+        if (recipient.getPrice() >= 50)
+            advertisementSender.setMessageType(new VoiceMessage());
+        else if (recipient.getPrice() >= 30)
+            advertisementSender.setMessageType(new SMSMessage());
+        else
+            advertisementSender.setMessageType(new EmailMessage());
 
-        advertisement.sendMessage();
-
-        System.out.println("\n");
-
-        advertisement.selectMessageType(40);
-        advertisement.selectLanguage("PL");
-        advertisement.sendMessage();
+        advertisementSender.sendAdvertisement(
+                advertisement.getMessage(),
+                recipient.getName(),
+                recipient.getLanguage()
+        );
     }
 }
