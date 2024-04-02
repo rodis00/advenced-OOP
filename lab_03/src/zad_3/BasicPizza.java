@@ -1,13 +1,8 @@
 package zad_3;
 
-public class BasicPizza implements Pizza{
-    @Override
-    public String getDescription() {
-        return "Pizza";
-    }
-
-    @Override
-    public double getCost() {
-        return 24;
+public class BasicPizza extends Pizza {
+    public BasicPizza() {
+        description = "Pizza";
+        cost = 20;
     }
 }

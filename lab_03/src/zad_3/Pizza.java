@@ -1,6 +1,14 @@
 package zad_3;
 
-public interface Pizza {
-    String getDescription();
-    double getCost();
+public abstract class Pizza {
+    protected String description;
+    protected double cost;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public double getCost() {
+        return cost;
+    }
 }
