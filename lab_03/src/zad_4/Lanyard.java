@@ -1,13 +1,15 @@
 package zad_4;
 
-public class Lanyard implements Product{
-    @Override
-    public String getDescription() {
-        return "Lanyard for pendrive";
+public class Lanyard extends ProductDecorator {
+    public Lanyard(Product product) {
+        super(product);
     }
 
-    @Override
+    public String getDescription() {
+        return product.getDescription() + ", Lanyard for pendrive";
+    }
+
     public double getPrice() {
-        return 1.0;
+        return product.getPrice() + 8.0;
     }
 }

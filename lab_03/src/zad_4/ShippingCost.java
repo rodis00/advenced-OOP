@@ -1,13 +1,15 @@
 package zad_4;
 
-public class ShippingCost implements Product{
-    @Override
-    public String getDescription() {
-        return "Shipping cost";
+public class ShippingCost extends ProductDecorator {
+    public ShippingCost(Product product) {
+        super(product);
     }
 
-    @Override
+    public String getDescription() {
+        return product.getDescription() + ", Shipping Cost";
+    }
+
     public double getPrice() {
-        return 13.0;
+        return product.getPrice() + 13.0;
     }
 }

@@ -3,14 +3,13 @@ package zad_4;
 public class ShopMain {
     public static void main(String[] args) {
 
-        Shop shop = new Shop();
+        Product shop = new Shop();
+        System.out.printf("%s - %.2f%n", shop.getDescription(), shop.getPrice());
 
-        shop.addProduct(new ShopMascot());
-        shop.addProduct(new ShopMascot());
-        shop.addProduct(new Lanyard());
-        shop.addProduct(new ShippingCost());
-        shop.addProduct(new Discount(10));
+        Product shop2 = new Discount(new Lanyard(new Shop()));
+        System.out.printf("%s - %.2f%n", shop2.getDescription(), shop2.getPrice());
 
-        shop.getPurchases();
+        Product shop3 = new Discount(new Lanyard(new ShopMascot(new Lanyard(new Shop()))));
+        System.out.printf("%s - %.2f%n", shop3.getDescription(), shop3.getPrice());
     }
 }

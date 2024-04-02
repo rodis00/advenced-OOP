@@ -1,19 +1,17 @@
 package zad_4;
 
-public class Discount implements Product{
-    private double discountAmount;
-
-    public Discount(double discountAmount) {
-        this.discountAmount = discountAmount;
+public class Discount extends ProductDecorator {
+    private double discount = 10;
+    public Discount(Product product) {
+        super(product);
     }
 
-    @Override
     public String getDescription() {
-        return "Discount " + discountAmount + " PLN";
+        return product.getDescription() + ", discount: " + discount + " PLN";
     }
 
-    @Override
     public double getPrice() {
-        return -discountAmount;
+        double totalPrice = product.getPrice() - discount;
+        return totalPrice < 0 ? 0 : totalPrice;
     }
 }
