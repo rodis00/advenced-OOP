@@ -1,3 +1,5 @@
+package zad_1;
+
 public class EvenNumber implements Observer{
     @Override
     public void notify(int number) {

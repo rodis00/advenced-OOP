@@ -1,3 +1,5 @@
+package zad_1;
+
 public class PositiveNumber implements Observer {
 
     @Override

@@ -1,3 +1,5 @@
+package zad_1;
+
 public class NumberThree implements Observer{
     @Override
     public void notify(int number) {
