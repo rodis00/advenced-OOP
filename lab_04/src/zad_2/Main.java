@@ -9,7 +9,7 @@ public class Main {
         exchange.addCompany(new Company("Facebook", 220.0));
         exchange.addCompany(new Company("Amazon", 3000.0));
 
-        exchange.addObserver(new Investor("Jan", "Nowak"));
+        Investor investor = new Investor("Jan", "Nowak", exchange);
 
         exchange.simulateChanges();
 

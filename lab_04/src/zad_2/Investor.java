@@ -3,13 +3,17 @@ package zad_2;
 public class Investor implements Observer{
     private String firstName;
     private String lastName;
+    private Subject subject;
 
     public Investor(
             String firstName,
-            String lastName
+            String lastName,
+            Subject subject
     ) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.subject = subject;
+        subject.addObserver(this);
     }
 
     @Override

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Exchange {
+public class Exchange implements Subject{
     private List<Observer> observers = new ArrayList<>();
     private List<Company> companies = new ArrayList<>();
     private Random random = new Random();
@@ -22,15 +22,18 @@ public class Exchange {
         }
     }
 
-    void addObserver(Observer observer) {
+    @Override
+    public void addObserver(Observer observer) {
         observers.add(observer);
     }
 
-    void removeObserver(Observer observer) {
+    @Override
+    public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 
-    void notifyObservers(String name, double price) {
+    @Override
+    public void notifyObservers(String name, double price) {
         for (Observer observer: observers) {
             observer.notify(name, price);
         }
