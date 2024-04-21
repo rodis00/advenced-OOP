@@ -12,6 +12,7 @@ public class MissionThirsty implements Observer{
 
     private void missionPassed() {
         System.out.println("Alcoholic - Mission passed (drink 100 beers)");
+        subject.removeObserver(this);
     }
 
     @Override

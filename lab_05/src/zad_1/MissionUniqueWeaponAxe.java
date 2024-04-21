@@ -13,6 +13,7 @@ public class MissionUniqueWeaponAxe implements Observer {
 
     protected void missionPassed() {
         System.out.println("Woodsman - Mission passed (Get Axe)");
+        subject.removeObserver(this);
     }
 
     @Override

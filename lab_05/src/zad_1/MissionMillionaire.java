@@ -12,6 +12,7 @@ public class MissionMillionaire implements Observer {
 
     private void missionPassed() {
         System.out.println("Millionaire - Mission passed (Collect $1 000 000 from gold bars)");
+        subject.removeObserver(this);
     }
 
     @Override
