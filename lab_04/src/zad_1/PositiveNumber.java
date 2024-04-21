@@ -1,6 +1,12 @@
 package zad_1;
 
 public class PositiveNumber implements Observer {
+    private Subject numberReader;
+
+    public PositiveNumber(Subject numberReader) {
+        this.numberReader = numberReader;
+        numberReader.addObserver(this);
+    }
 
     @Override
     public void notify(int number) {

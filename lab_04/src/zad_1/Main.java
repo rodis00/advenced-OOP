@@ -5,9 +5,9 @@ public class Main {
 
         NumberReader numberReader = new NumberReader();
 
-        numberReader.addObserver(new PositiveNumber());
-        numberReader.addObserver(new NumberThree());
-        numberReader.addObserver(new EvenNumber());
+        PositiveNumber positiveNumber = new PositiveNumber(numberReader);
+        NumberThree numberThree = new NumberThree(numberReader);
+        EvenNumber evenNumber = new EvenNumber(numberReader);
 
         numberReader.readNumber();
     }

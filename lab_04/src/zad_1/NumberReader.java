@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class NumberReader {
+public class NumberReader implements Subject {
     List<Observer> observers = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
@@ -64,15 +64,18 @@ public class NumberReader {
         }
     }
 
-    void addObserver(Observer observer) {
+    @Override
+    public void addObserver(Observer observer) {
         observers.add(observer);
     }
 
-    void removeObserver(Observer observer) {
+    @Override
+    public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 
-    void notifyObservers(int number) {
+    @Override
+    public void notifyObservers(int number) {
         for (Observer observer : observers) {
             observer.notify(number);
         }
