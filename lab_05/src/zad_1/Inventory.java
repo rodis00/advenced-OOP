@@ -35,9 +35,8 @@ public class Inventory implements Subject {
 
     @Override
     public void notifyObservers(Item item, int amount) {
-        List<Observer> newList = new ArrayList<>(observers);
-        for (Observer observer : newList) {
-            observer.update(item, amount);
+        for (int i = 0; i < observers.size(); i++) {
+            observers.get(i).update(item, amount);
         }
     }
 }
